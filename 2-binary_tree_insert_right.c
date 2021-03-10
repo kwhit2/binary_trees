@@ -18,7 +18,8 @@ binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 		return (NULL);
 
 	right_child = binary_tree_node(parent, value); /* create right child node */
-	/* may need NULL check here for malloc? Working ok now it seems */
+	if (right_child == NULL)
+		return (NULL);
 
 	right_child->right = parent->right;
 	/* ^ set right_child into same position as parent */
